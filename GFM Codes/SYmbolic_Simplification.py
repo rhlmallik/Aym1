@@ -1,0 +1,20 @@
+import sympy as sym
+Vnom = sym.Symbol('Vnom')
+Rf = sym.Symbol('Rf')
+kp = sym.Symbol('kp')
+I = sym.Symbol('I')
+Lf =sym.Symbol('Lf')
+w = sym.Symbol('w')
+E = sym.Symbol('E')
+
+a = sym.Symbol('a')
+b = sym.Symbol('b')
+c = sym.Symbol('c')
+d = sym.Symbol('d')
+
+Pref = sym.Symbol('Pref')
+#expr = sym.expand( (a/(1+b*I) - I*c)**2 + (d*I)**2- E**2)
+expr = (a - I*c*(I*b + 1))**2 + (I*b + 1)**2*((I*d)**2 - E**2)
+polyvar = sym.collect(sym.expand(expr),I)
+print(expr)
+print(polyvar)
